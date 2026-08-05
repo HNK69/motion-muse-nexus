@@ -31,7 +31,7 @@ export function Magnetic({ children, className, strength = 14 }: MagneticProps) 
       {...(active ? { style: { x: springX, y: springY } } : {})}
       ref={ref}
       className={cn("inline-block", className)}
-      style={active ? { x: springX, y: springY } : undefined}
+      
       onPointerMove={(event) => {
         if (!active || !ref.current) return;
         const rect = ref.current.getBoundingClientRect();
