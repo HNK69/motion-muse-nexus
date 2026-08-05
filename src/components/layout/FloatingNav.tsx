@@ -1,4 +1,5 @@
-import { AnimatePresence, motion } from "motion/react";
+import * as Dialog from "@radix-ui/react-dialog";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, PERSON } from "@/data/site";
@@ -25,14 +26,8 @@ export function FloatingNav() {
     };
   }, [open]);
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
-
   return (
-    <>
+    <Dialog.Root open={open} onOpenChange={setOpen}>
       <motion.header
         className="fixed inset-x-0 top-0 z-50"
         animate={{ y: hidden ? "-120%" : "0%" }}
@@ -71,64 +66,57 @@ export function FloatingNav() {
             ))}
           </ul>
 
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            aria-label="Open menu"
-            aria-expanded={open}
-            className="inline-flex size-11 items-center justify-center border border-border text-foreground transition-colors hover:border-primary md:hidden"
-          >
-            <Menu className="size-5" aria-hidden="true" />
-          </button>
+          <Dialog.Trigger asChild>
+            <button
+              type="button"
+              aria-label="Open menu"
+              aria-expanded={open}
+              className="inline-flex size-11 items-center justify-center border border-border text-foreground transition-colors hover:border-primary md:hidden"
+            >
+              <Menu className="size-5" aria-hidden="true" />
+            </button>
+          </Dialog.Trigger>
         </nav>
       </motion.header>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className="fixed inset-0 z-[70] bg-background px-6 py-5 md:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: EASE }}
-          >
-            <div className="flex items-center justify-between">
-              <span className="display text-xl">{PERSON.shortName}</span>
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 z-[70] bg-background/95 backdrop-blur-[2px] md:hidden" />
+        <Dialog.Content className="fixed inset-0 z-[70] overflow-y-auto bg-background px-6 py-5 focus:outline-none md:hidden">
+          <div className="flex items-center justify-between">
+            <span className="display text-xl">{PERSON.shortName}</span>
+            <Dialog.Close asChild>
               <button
                 type="button"
-                onClick={() => setOpen(false)}
                 aria-label="Close menu"
-                autoFocus
                 className="inline-flex size-11 items-center justify-center border border-border"
               >
                 <X className="size-5" aria-hidden="true" />
               </button>
-            </div>
-            <ul className="mt-16 flex flex-col gap-2">
-              {NAV_LINKS.map((link, i) => (
-                <motion.li
-                  key={link.id}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.06 * i, duration: 0.6, ease: EASE }}
+            </Dialog.Close>
+          </div>
+          <ul className="mt-16 flex flex-col gap-2">
+            {NAV_LINKS.map((link, i) => (
+              <motion.li
+                key={link.id}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.06 * i, duration: 0.6, ease: EASE }}
+              >
+                <a
+                  href={`#${link.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    requestAnimationFrame(() => scrollToSection(link.id));
+                  }}
+                  className="display block py-3 text-[clamp(2.25rem,12vw,4rem)]"
                 >
-                  <a
-                    href={`#${link.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setOpen(false);
-                      requestAnimationFrame(() => scrollToSection(link.id));
-                    }}
-                    className="display block py-3 text-[clamp(2.25rem,12vw,4rem)]"
-                  >
-                    {link.label}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+                  {link.label}
+                </a>
+              </motion.li>
+            ))}
+          </ul>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }

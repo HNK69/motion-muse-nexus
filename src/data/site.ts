@@ -88,20 +88,28 @@ export const NAV_LINKS = [
 /** Replace each `video` file with the real export of the same name. */
 export const PROJECTS: Project[] = [
   {
-    id: "showreel",
-    title: "Showreel",
-    category: "Reel",
-    year: "2026",
-    video: "/showreel.mp4",
-    description: "A condensed cut of the work that defines the last two years.",
-  },
-  {
-    id: "travel-film",
-    title: "Travel Film",
+    id: "travel-film-i",
+    title: "Travel Film I",
     category: "Documentary",
     year: "2025",
-    video: "/travel-film.mp4",
-    description: "Long-form travel storytelling built around light and silence.",
+    video: "/travel-film-i.mp4",
+    description: "A first travel film exploring light, landscape and quiet moments.",
+  },
+  {
+    id: "travel-film-ii",
+    title: "Travel Film II",
+    category: "Documentary",
+    year: "2025",
+    video: "/travel-film-ii.mp4",
+    description: "A second travel chapter focused on rhythm, pace and place.",
+  },
+  {
+    id: "cinematic-travel-reel-portrait",
+    title: "Cinematic Travel Reel (Portrait)",
+    category: "Portrait",
+    year: "2025",
+    video: "/cinematic-travel-reel-portrait.mp4",
+    description: "A vertical travel reel built for immersive portrait viewing.",
   },
   {
     id: "college-event-reel",
@@ -120,20 +128,12 @@ export const PROJECTS: Project[] = [
     description: "Product-led commercial edit with precision pacing and grade.",
   },
   {
-    id: "ai-visual-project",
-    title: "AI Visual Project",
+    id: "ai-creative-visuals",
+    title: "AI Creative Visuals",
     category: "Experimental",
     year: "2026",
-    video: "/ai-visual-project.mp4",
-    description: "Generated sequences composited into a live-action narrative.",
-  },
-  {
-    id: "creative-edit",
-    title: "Creative Edit",
-    category: "Concept",
-    year: "2024",
-    video: "/creative-edit.mp4",
-    description: "A typographic, rhythm-first experiment in motion and cut.",
+    video: "/ai-creative-visuals.mp4",
+    description: "Generated visual sequences composited into a live-action narrative.",
   },
 ];
 
@@ -149,7 +149,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     id: "emptycup",
     company: "EmptyCup",
     role: "Video Editor",
-    period: "2025 — Present",
+    period: "2025–2026",
     description:
       "Short-form and brand films for an interior design platform, built around calm pacing and material texture.",
   },
@@ -166,8 +166,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     company: "College Events & Fests",
     role: "Official Production",
     period: "2023 — Present",
-    description:
-      "Aftermovies, promos and live coverage for official college events and festivals.",
+    description: "Aftermovies, promos and live coverage for official college events and festivals.",
   },
   {
     id: "freelance",
@@ -191,6 +190,11 @@ export const SERVICES: Service[] = [
     description: "Place-driven storytelling that holds a frame long enough to feel it.",
   },
   {
+    id: "color-grading",
+    title: "Color Grading",
+    description: "Considered palettes, film emulation and consistent looks across a cut.",
+  },
+  {
     id: "commercial-editing",
     title: "Commercial Editing",
     description: "Product and brand edits engineered for attention and recall.",
@@ -205,25 +209,39 @@ export const SERVICES: Service[] = [
     title: "AI Visual Creation",
     description: "Generated plates and elements composited into real footage seamlessly.",
   },
-  {
-    id: "color-grading",
-    title: "Color Grading",
-    description: "Considered palettes, film emulation and consistent looks across a cut.",
-  },
 ];
 
 export const PROCESS = [
-  { id: "plan", title: "Plan", description: "Reference, structure, and the emotional arc before a single cut." },
-  { id: "edit", title: "Edit", description: "Assembly, rhythm and story — the frame count that matters." },
-  { id: "enhance", title: "Enhance", description: "Graphics, AI elements and sound layered with intent." },
-  { id: "refine", title: "Refine", description: "Grade, polish, and the final ten percent that reads as craft." },
-  { id: "deliver", title: "Deliver", description: "Formats, aspect ratios and masters for every platform." },
+  {
+    id: "plan",
+    title: "Plan",
+    description: "Reference, structure, and the emotional arc before a single cut.",
+  },
+  {
+    id: "edit",
+    title: "Edit",
+    description: "Assembly, rhythm and story — the frame count that matters.",
+  },
+  {
+    id: "enhance",
+    title: "Enhance",
+    description: "Graphics, AI elements and sound layered with intent.",
+  },
+  {
+    id: "refine",
+    title: "Refine",
+    description: "Grade, polish, and the final ten percent that reads as craft.",
+  },
+  {
+    id: "deliver",
+    title: "Deliver",
+    description: "Formats, aspect ratios and masters for every platform.",
+  },
 ] as const;
 
 export const TOOLS: Tool[] = [
   { id: "davinci", name: "DaVinci Resolve" },
-  { id: "photoshop", name: "Adobe Photoshop" },
-  { id: "illustrator", name: "Adobe Illustrator" },
+  { id: "premiere", name: "Adobe Premiere Pro" },
   { id: "kling", name: "Kling" },
   { id: "veo", name: "Google Veo" },
   { id: "luma", name: "Luma AI" },
@@ -253,13 +271,3 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Event Production",
   },
 ];
-
-/** Frame gallery placeholders — replace each with a real still. */
-export const FRAMES = [
-  { id: "frame-01", label: "Frame 01", caption: "Travel film — dawn" },
-  { id: "frame-02", label: "Frame 02", caption: "Commercial — product macro" },
-  { id: "frame-03", label: "Frame 03", caption: "Event — crowd" },
-  { id: "frame-04", label: "Frame 04", caption: "AI plate — composite" },
-  { id: "frame-05", label: "Frame 05", caption: "Travel film — highway" },
-  { id: "frame-06", label: "Frame 06", caption: "Portrait — grade test" },
-] as const;

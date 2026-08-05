@@ -11,7 +11,6 @@ import { ShowreelLightbox } from "@/components/media/ShowreelLightbox";
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import { Experience } from "@/components/sections/Experience";
-import { Gallery } from "@/components/sections/Gallery";
 import { Hero } from "@/components/sections/Hero";
 import { Process } from "@/components/sections/Process";
 import { Services } from "@/components/sections/Services";
@@ -40,12 +39,12 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [showreel, setShowreel] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [, setIntroDone] = useState(false);
   const onIntroDone = useCallback(() => setIntroDone(true), []);
 
-  const openShowreel = useCallback(() => {
-    setShowreel(PROJECTS[0] ?? null);
+  const openProject = useCallback(() => {
+    setSelectedProject(PROJECTS[0] ?? null);
   }, []);
 
   return (
@@ -56,28 +55,26 @@ function Index() {
       <FloatingNav />
 
       <main>
-
-        <Hero onWatchShowreel={openShowreel} />
+        <Hero onWatchShowreel={openProject} />
         <About />
-        <Work onSelect={setShowreel} />
+        <Work onSelect={setSelectedProject} />
         <Stats />
         <Experience />
         <Services />
         <Tools />
         <Process />
-        <Gallery />
         <Testimonials />
         <Contact />
       </main>
 
       <Footer />
 
-      {showreel && (
+      {selectedProject && (
         <ShowreelLightbox
-          open={Boolean(showreel)}
-          onOpenChange={(open) => !open && setShowreel(null)}
-          title={showreel.title}
-          src={showreel.video}
+          open={Boolean(selectedProject)}
+          onOpenChange={(open) => !open && setSelectedProject(null)}
+          title={selectedProject.title}
+          src={selectedProject.video}
         />
       )}
     </MotionConfig>

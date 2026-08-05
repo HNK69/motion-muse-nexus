@@ -32,7 +32,11 @@ export function Counter({ value, suffix = "", duration = 1.6, className }: Count
   }, [inView, reduced, value, duration]);
 
   return (
-    <span ref={ref} className={className} style={{ transitionTimingFunction: `cubic-bezier(${EASE.join(",")})` }}>
+    <span
+      ref={ref}
+      className={className}
+      style={{ transitionTimingFunction: `cubic-bezier(${EASE.join(",")})` }}
+    >
       {display}
       {suffix}
     </span>

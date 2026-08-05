@@ -16,13 +16,7 @@ type LinesProps = {
  * Editorial line-by-line mask reveal. The full text stays in the accessibility
  * tree as a single string — only the visual lines are split.
  */
-export function Lines({
-  lines,
-  className,
-  lineClassName,
-  delay = 0,
-  as: Tag = "h2",
-}: LinesProps) {
+export function Lines({ lines, className, lineClassName, delay = 0, as: Tag = "h2" }: LinesProps) {
   return (
     <Tag className={cn("[text-wrap:balance]", className)}>
       <span className="sr-only">{lines.join(" ")}</span>

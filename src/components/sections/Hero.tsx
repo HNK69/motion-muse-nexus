@@ -19,11 +19,7 @@ export function Hero({ onWatchShowreel }: { onWatchShowreel: () => void }) {
         {/* Replace with hero-video.mp4 */}
         <video
           src="/hero-video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
+          autoPlay={!reduced}
           className="size-full object-cover opacity-45"
         />
         <div className="absolute inset-0 bg-background/55" />

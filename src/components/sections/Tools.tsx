@@ -6,8 +6,7 @@ import { TOOLS } from "@/data/site";
 /** Official monochrome marks where available, wordmarks otherwise. */
 const LOGO_SLUGS: Record<string, string> = {
   davinci: "davinciresolve",
-  photoshop: "adobephotoshop",
-  illustrator: "adobeillustrator",
+  premiere: "adobepremierepro",
 };
 
 export function Tools() {
@@ -19,7 +18,6 @@ export function Tools() {
 
       <ul
         className="no-scrollbar mt-12 flex snap-x snap-mandatory gap-px overflow-x-auto border border-hairline bg-hairline"
-        tabIndex={0}
         aria-label="Tools I work with, scrollable"
       >
         {TOOLS.map((tool) => {

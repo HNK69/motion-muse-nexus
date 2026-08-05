@@ -13,8 +13,8 @@ export function Stats() {
 
       <Reveal delay={0.1}>
         <p className="mt-10 max-w-2xl font-serif text-2xl italic leading-snug text-muted-foreground sm:text-3xl">
-          A record of the work so far — brands, agencies, official productions and
-          independent commissions.
+          A record of the work so far — brands, agencies, official productions and independent
+          commissions.
         </p>
       </Reveal>
 
