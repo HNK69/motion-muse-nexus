@@ -28,6 +28,7 @@ export function Magnetic({ children, className, strength = 14 }: MagneticProps) 
 
   return (
     <motion.span
+      {...(active ? { style: { x: springX, y: springY } } : {})}
       ref={ref}
       className={cn("inline-block", className)}
       style={active ? { x: springX, y: springY } : undefined}
