@@ -1,38 +1,46 @@
-# H N Krupaal — Cinematic Portfolio
+# H N Krupaal — Cinematic Digital Experience
 
-A dark, editorial, single-experience portfolio built to feel like a film title sequence: deep blacks, oversized magazine typography, subtle grain, restrained red accent, and premium motion.
+A dark, editorial, cinematic single-scroll site: deep blacks, oversized magazine typography, subtle grain, restrained red accent, and premium restrained motion. Built for real usability first, then visual impact.
 
 ## One stack note
-This project runs on React + TanStack Start (not Next.js) with Tailwind CSS. Everything you asked for — SSR, SEO metadata, fast loads, Framer Motion animation — works identically here. No other change to the brief.
+This project runs on React + TanStack Start (not Next.js) with Tailwind CSS. SSR, SEO metadata, fast loads, and Framer Motion animation all work identically here. No other change to the brief.
 
 ## Design system
 - Background `#050505`, cards `#111111`, accent `#D00000`, white / light-gray text — all as semantic tokens.
-- Type: bold grotesque display (Archivo/Anton-class) for headline slabs, elegant italic serif for accents and pull quotes, clean sans for body.
-- Global fixed grain overlay, custom cursor with magnetic hover on interactive elements, Lenis-style smooth scroll, section-level reveal/stagger on scroll.
+- Type: bold grotesque display for headline slabs, elegant italic serif for accents and pull quotes, clean sans for body. Fluid `clamp()` scale so headlines stay editorial on mobile.
+- Global fixed grain overlay, smooth (Lenis-style) scroll, film-frame section transitions — slow mask/fade wipes, no flashy effects.
 - No gradients, no glass, no neon. High contrast, heavy whitespace, sharp corners.
 
-## Page structure (one continuous cinematic scroll, `/`)
-1. **Hero** — fullscreen muted autoplay looping video placeholder (commented `<!-- Replace with hero-video.mp4 -->`), stacked title H N KRUPAAL / CINEMATIC / VIDEO / EDITOR with line-by-line mask reveal, subtitle, magnetic "Watch Showreel →" button, scroll indicator.
-2. **About** — editorial two-column: oversized headline "Turning moments into cinematic experiences." + short paragraph, plus the What I Do list as a quiet marquee/index.
-3. **Featured Work** — six large premium cards (Showreel, Travel Film, College Event Reel, Commercial Edit, AI Visual Project, Creative Edit). Each is an HTML5 `<video>` placeholder that plays muted on hover with a clearly commented replace line. No YouTube.
-4. **Experience** — elegant vertical timeline: EmptyCup, Sharp Cuttzz, College Events, Freelance Projects, with official brand logos where publicly available and minimal wordmarks otherwise.
-5. **Services** — six cards: Cinematic Editing, Travel Films, Commercial Editing, Motion Graphics, AI Visual Creation, Color Grading.
-6. **Creative Process** — Plan / Edit / Enhance / Refine / Deliver as numbered editorial steps with staggered reveal.
-7. **Frame Gallery** — horizontal scroll strip of large cinematic frame placeholders with parallax.
-8. **Testimonials** — restrained quote cards, placeholder copy.
-9. **Contact** — full-bleed type "LET'S CREATE / SOMETHING / MEMORABLE." plus Email, Instagram, LinkedIn, GitHub buttons with official icons.
-10. **Footer** — single line, © H N Krupaal.
+## Experience shell
+- **Loading screen** — black, large centered "H N KRUPAAL", fade in, brief hold, fade out into hero on smooth easing. Shown once per session, skippable, instant for reduced-motion.
+- **Floating nav** — `HN` left; Work / About / Experience / Services / Contact right. Hides on scroll down, reappears on scroll up. Mobile: compact bar with full-screen menu overlay, always reachable.
+- **Custom cursor** — expands on hover with contextual text (Play / View / Open). Desktop pointer devices only; touch devices get native behavior and hover states mapped to tap feedback.
+- **Showreel lightbox** — fullscreen dark overlay with elegant controls, ESC to close, focus trapped, focus returned on close.
 
-Showreel button opens a fullscreen video lightbox (placeholder source).
+## Sections (single scroll, `/`)
+1. **Hero** — fullscreen muted autoplay looping video placeholder (`{/* Replace with hero-video.mp4 */}`), stacked H N KRUPAAL / CINEMATIC / VIDEO / EDITOR with line-by-line mask reveal, subtitle, magnetic "Watch Showreel →" button, scroll indicator.
+2. **About** — editorial two-column: "Turning moments into cinematic experiences." + short paragraph; What I Do as a quiet index list.
+3. **Featured Work** — six large premium cards (Showreel, Travel Film, College Event Reel, Commercial Edit, AI Visual Project, Creative Edit). HTML5 `<video>` placeholders, muted preview on hover, each with a clear replace comment. No YouTube. Aspect-ratio boxes so any footage fits without layout shift.
+4. **Selected Work (statistics)** — luxury annual-report layout, not stat cards: oversized numerals with animated counters — 20+ Projects, 2 Brands, 1 Creative Agency, Official College Productions.
+5. **Experience** — elegant timeline: EmptyCup, Sharp Cuttzz, College Events, Freelance Projects, with official logos where publicly available, minimal wordmarks otherwise.
+6. **Services** — six cards: Cinematic Editing, Travel Films, Commercial Editing, Motion Graphics, AI Visual Creation, Color Grading.
+7. **Tools** — horizontal monochrome strip: DaVinci Resolve, Photoshop, Illustrator, Kling, Google Veo, Luma AI, Runway. Official SVG logos where available, elegant wordmarks otherwise.
+8. **Creative Process** — Plan / Edit / Enhance / Refine / Deliver as numbered editorial steps with staggered reveal.
+9. **Frame Gallery** — horizontal cinematic frame placeholders with parallax; swipeable on touch, keyboard-scrollable.
+10. **Testimonials** — restrained quote cards, placeholder copy.
+11. **Contact** — LET'S CREATE / SOMETHING / CINEMATIC. with Email, Instagram, LinkedIn, GitHub buttons using official icons.
+12. **Footer** — © H N Krupaal.
 
-## Media policy
-Every video and frame is a placeholder with an inline comment naming the file to swap in (e.g. `{/* Replace with travel-film.mp4 */}`). No stock media. Poster frames for the placeholders are generated as dark cinematic stills so the site looks finished before you drop in real footage.
+## Micro-interactions
+Tactile button press states, cards lifting a few pixels, images with subtle depth on hover, line-by-line type reveal, elegant underline/mask hovers. Motion is short, eased, and never blocks reading.
 
-## Technical
-- Framer Motion (`motion`) for reveals, stagger, parallax, page/section transitions; `prefers-reduced-motion` respected.
-- Components split per section under `src/components/`, tokens in `src/styles.css`.
-- SEO: unique title/description/OG/Twitter metadata on the route head, semantic landmarks, single H1, alt text, lazy-loaded gallery media.
-- Fully responsive; type scales down cleanly on mobile with the same editorial rhythm.
+## Accessibility, performance, responsiveness
+- `prefers-reduced-motion` disables reveals, parallax, counters animation, and the loading sequence.
+- Semantic landmarks, single `<h1>`, one `<main>`, visible focus rings, full keyboard path through nav, work cards, lightbox, and gallery.
+- Tap targets ≥44px, contrast checked against `#050505`, no content only reachable by hover.
+- Videos lazy-loaded with poster frames, `preload="none"` off-screen, `playsInline`; images lazy with explicit aspect ratios.
+- Mobile keeps the full cinematic identity — same type treatment and grain — with heavier animations traded for lighter fades.
+- SEO: unique title/description/OG/Twitter on the route head, alt text everywhere, JSON-LD Person schema.
 
-## Needed from you (optional, can ship with placeholders)
-Real email address and Instagram / LinkedIn / GitHub URLs — otherwise these link to `#` until provided.
+## Needed from you (optional, ships with placeholders otherwise)
+Real email address and Instagram / LinkedIn / GitHub URLs.
