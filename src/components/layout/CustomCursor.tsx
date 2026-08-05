@@ -25,7 +25,7 @@ export function CustomCursor() {
       const target = event.target as HTMLElement | null;
       const labelled = target?.closest<HTMLElement>("[data-cursor]");
       const interactive = target?.closest("a,button,[role='button'],input,textarea");
-      setLabel(labelled?.dataset.cursor ?? null);
+      setLabel(labelled?.dataset["cursor"] ?? null);
       setHovering(Boolean(labelled || interactive));
     };
     window.addEventListener("mousemove", onMove, { passive: true });
