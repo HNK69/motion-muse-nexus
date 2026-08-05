@@ -56,9 +56,7 @@ function Index() {
       <FloatingNav />
 
       <main>
-        <h1 className="sr-only">
-          {PERSON.name} — {PERSON.title}
-        </h1>
+
         <Hero onWatchShowreel={openShowreel} />
         <About />
         <Work onSelect={setShowreel} />
