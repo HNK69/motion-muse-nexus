@@ -72,7 +72,7 @@ export function Hero({ onWatchShowreel }: { onWatchShowreel: () => void }) {
                     className="size-4 transition-transform duration-500 group-hover:translate-x-1"
                     aria-hidden="true"
                   />
-                </button>
+                </a>
               </Magnetic>
             </motion.div>
           </div>
