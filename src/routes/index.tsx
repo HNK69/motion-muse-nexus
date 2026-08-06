@@ -43,9 +43,6 @@ function Index() {
   const [, setIntroDone] = useState(false);
   const onIntroDone = useCallback(() => setIntroDone(true), []);
 
-  const openProject = useCallback(() => {
-    setSelectedProject(PROJECTS[0] ?? null);
-  }, []);
 
   return (
     <MotionConfig reducedMotion="user">
