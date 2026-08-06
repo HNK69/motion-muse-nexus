@@ -62,13 +62,12 @@ export function Hero({ onWatchShowreel }: { onWatchShowreel: () => void }) {
               transition={{ delay: 0.85, duration: 1, ease: EASE }}
             >
               <Magnetic>
-                <button
-                  type="button"
-                  onClick={onWatchShowreel}
-                  data-cursor="Play"
+                <a
+                  href="#work"
+                  data-cursor="View"
                   className="group inline-flex min-h-12 items-center gap-4 border border-border px-7 py-4 text-xs uppercase tracking-[0.2em] transition-colors duration-500 hover:border-primary hover:bg-primary active:scale-[0.98]"
                 >
-                  Watch Showreel
+                  View Work
                   <ArrowRight
                     className="size-4 transition-transform duration-500 group-hover:translate-x-1"
                     aria-hidden="true"
