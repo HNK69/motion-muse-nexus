@@ -55,7 +55,7 @@ function Index() {
       <FloatingNav />
 
       <main>
-        <Hero onWatchShowreel={openProject} />
+        <Hero />
         <About />
         <Work onSelect={setSelectedProject} />
         <Stats />
