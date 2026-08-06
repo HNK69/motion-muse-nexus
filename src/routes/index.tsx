@@ -18,7 +18,7 @@ import { Stats } from "@/components/sections/Stats";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Tools } from "@/components/sections/Tools";
 import { Work } from "@/components/sections/Work";
-import { PROJECTS, type Project } from "@/data/site";
+import { type Project } from "@/data/site";
 
 const TITLE = "H N Krupaal — Cinematic Video Editor & AI Creative";
 const DESCRIPTION =
