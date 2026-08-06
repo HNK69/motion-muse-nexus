@@ -25,10 +25,17 @@ export function ShowreelLightbox({ open, onOpenChange, title, src }: ShowreelLig
             Fullscreen player. Press Escape to close.
           </Dialog.Description>
 
-          <div className="mx-auto w-full max-w-[1400px]">
-            {/* Replace with showreel.mp4 */}
-            <VideoPlaceholder src={src} label={`${title} — replace ${src}`} autoPlay />
+          <div className="mx-auto flex max-h-[80vh] w-full max-w-[1400px] items-center justify-center">
+            <VideoPlaceholder
+              src={src}
+              label={title}
+              autoPlay
+              controls
+              muted={false}
+              className="max-h-[80vh]"
+            />
           </div>
+
 
           <Dialog.Close
             aria-label="Close player"
