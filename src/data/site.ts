@@ -68,13 +68,13 @@ export const PERSON = {
 
 export const DISCIPLINES = [
   "Cinematic Video Editing",
+  "Color Grading",
   "Travel Videos",
   "Short-form Content",
   "Event Films",
   "Commercial Videos",
-  "AI-Assisted Visual Creation",
   "Motion Graphics",
-  "Color Grading",
+  "AI-Assisted Visual Creation",
 ] as const;
 
 export const NAV_LINKS = [
