@@ -68,13 +68,13 @@ export const PERSON = {
 
 export const DISCIPLINES = [
   "Cinematic Video Editing",
+  "Color Grading",
   "Travel Videos",
   "Short-form Content",
   "Event Films",
   "Commercial Videos",
-  "AI-Assisted Visual Creation",
   "Motion Graphics",
-  "Color Grading",
+  "AI-Assisted Visual Creation",
 ] as const;
 
 export const NAV_LINKS = [
@@ -138,7 +138,7 @@ export const PROJECTS: Project[] = [
 ];
 
 export const STATS: Stat[] = [
-  { id: "projects", value: 20, suffix: "+", label: "Projects delivered" },
+  { id: "projects", value: 50, suffix: "+", label: "Projects delivered" },
   { id: "brands", value: 2, label: "Brands" },
   { id: "agency", value: 1, label: "Creative agency" },
   { id: "college", value: 6, suffix: "+", label: "Official college productions" },

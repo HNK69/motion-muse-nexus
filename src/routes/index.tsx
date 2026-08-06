@@ -18,7 +18,7 @@ import { Stats } from "@/components/sections/Stats";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Tools } from "@/components/sections/Tools";
 import { Work } from "@/components/sections/Work";
-import { PROJECTS, type Project } from "@/data/site";
+import { type Project } from "@/data/site";
 
 const TITLE = "H N Krupaal — Cinematic Video Editor & AI Creative";
 const DESCRIPTION =
@@ -43,9 +43,6 @@ function Index() {
   const [, setIntroDone] = useState(false);
   const onIntroDone = useCallback(() => setIntroDone(true), []);
 
-  const openProject = useCallback(() => {
-    setSelectedProject(PROJECTS[0] ?? null);
-  }, []);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -55,7 +52,7 @@ function Index() {
       <FloatingNav />
 
       <main>
-        <Hero onWatchShowreel={openProject} />
+        <Hero />
         <About />
         <Work onSelect={setSelectedProject} />
         <Stats />
