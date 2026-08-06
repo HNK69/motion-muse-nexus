@@ -6,7 +6,7 @@ import { Magnetic } from "@/components/motion/Magnetic";
 import { EASE } from "@/lib/motion";
 import { PERSON } from "@/data/site";
 
-export function Hero({ onWatchShowreel }: { onWatchShowreel: () => void }) {
+export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
