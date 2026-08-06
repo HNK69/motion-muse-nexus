@@ -58,11 +58,11 @@ export const PERSON = {
   subtitle: "Creating cinematic edits enhanced with modern AI visuals.",
   about:
     "I'm an engineering student and freelance video editor passionate about cinematic visuals, travel films, and creative storytelling through editing. I combine traditional editing techniques with modern AI tools to create graphics, visual elements, and unique creative sequences that elevate every project.",
-  email: "hello@hnkrupaal.com",
+  email: "hnkrupaal@gmail.com",
   socials: {
-    instagram: "https://instagram.com/",
-    linkedin: "https://linkedin.com/",
-    github: "https://github.com/",
+    instagram: "https://www.instagram.com/hnkrupaal/",
+    linkedin: "https://www.linkedin.com/in/h-n-krupaal/",
+    github: "https://github.com/HNK69",
   },
 } as const;
 
@@ -92,7 +92,7 @@ export const PROJECTS: Project[] = [
     title: "Travel Film I",
     category: "Documentary",
     year: "2025",
-    video: "/travel-film-i.mp4",
+    video: "/travel-film-i.mov",
     description: "A first travel film exploring light, landscape and quiet moments.",
   },
   {
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
     title: "Travel Film II",
     category: "Documentary",
     year: "2025",
-    video: "/travel-film-ii.mp4",
+    video: "/travel-film-ii.mov",
     description: "A second travel chapter focused on rhythm, pace and place.",
   },
   {
@@ -108,7 +108,7 @@ export const PROJECTS: Project[] = [
     title: "Cinematic Travel Reel (Portrait)",
     category: "Portrait",
     year: "2025",
-    video: "/cinematic-travel-reel-portrait.mp4",
+    video: "/WayanadSAFAR.mp4",
     description: "A vertical travel reel built for immersive portrait viewing.",
   },
   {
@@ -116,7 +116,7 @@ export const PROJECTS: Project[] = [
     title: "College Event Reel",
     category: "Event",
     year: "2025",
-    video: "/college-event-reel.mp4",
+    video: "Brx.mp4",
     description: "High-energy festival coverage cut to the rhythm of the crowd.",
   },
   {
@@ -124,7 +124,7 @@ export const PROJECTS: Project[] = [
     title: "Commercial Edit",
     category: "Brand",
     year: "2025",
-    video: "/commercial-edit.mp4",
+    video: "/Brocode2.mp4",
     description: "Product-led commercial edit with precision pacing and grade.",
   },
   {
@@ -132,7 +132,7 @@ export const PROJECTS: Project[] = [
     title: "AI Creative Visuals",
     category: "Experimental",
     year: "2026",
-    video: "/ai-creative-visuals.mp4",
+    video: "/Paritrana Teaser.mp4",
     description: "Generated visual sequences composited into a live-action narrative.",
   },
 ];
