@@ -29,13 +29,13 @@ export function Work({ onSelect }: WorkProps) {
                 aria-label={`Play ${project.title}`}
               >
                 <div className="relative overflow-hidden border border-hairline transition-transform duration-700 ease-out group-hover:-translate-y-1">
-                  {/* Replace with {project.video} — e.g. /showreel.mp4, /travel-film.mp4 */}
                   <VideoPlaceholder
                     src={project.video}
-                    label={`Replace ${project.video}`}
+                    label={project.title}
                     playOnHover
                     className="transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
                   />
+
                 </div>
 
                 <div className="mt-5 flex items-baseline justify-between gap-6">
