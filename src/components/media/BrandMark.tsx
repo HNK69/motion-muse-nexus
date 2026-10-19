@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 type BrandMarkProps = {
   name: string;
-  /** Official monochrome SVG (Simple Icons CDN). Falls back to a wordmark. */
+  /** Official monochrome SVG, local image URL (/logos/...) or Simple Icons CDN slug. Falls back to a wordmark. */
   slug?: string;
   className?: string;
 };
@@ -28,16 +28,19 @@ export function BrandMark({ name, slug, className }: BrandMarkProps) {
     );
   }
 
+  const src =
+    slug.startsWith("/") || slug.startsWith("http")
+      ? slug
+      : `https://cdn.simpleicons.org/${slug}/ffffff`;
+
   return (
     <img
-      src={`https://cdn.simpleicons.org/${slug}/ffffff`}
+      src={src}
       alt={`${name} logo`}
       loading="lazy"
       decoding="async"
-      width={28}
-      height={28}
       onError={() => setFailed(true)}
-      className={cn("h-7 w-auto opacity-70 transition-opacity duration-500", className)}
+      className={cn("h-7 w-auto max-w-[120px] object-contain opacity-75 transition-opacity duration-500 hover:opacity-100", className)}
     />
   );
 }

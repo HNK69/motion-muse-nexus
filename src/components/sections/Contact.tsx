@@ -6,7 +6,7 @@ import { BrandMark } from "@/components/media/BrandMark";
 import { PERSON } from "@/data/site";
 
 const CHANNELS = [
-  { id: "email", label: "Email", href: `mailto:${PERSON.email}`, slug: "maildotru" },
+  { id: "email", label: "Email", href: `mailto:${PERSON.email}`, slug: "gmail" },
   { id: "instagram", label: "Instagram", href: PERSON.socials.instagram, slug: "instagram" },
   { id: "linkedin", label: "LinkedIn", href: PERSON.socials.linkedin, slug: "linkedin" },
   { id: "github", label: "GitHub", href: PERSON.socials.github, slug: "github" },

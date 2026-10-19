@@ -72,6 +72,11 @@ function Index() {
           onOpenChange={(open) => !open && setSelectedProject(null)}
           title={selectedProject.title}
           src={selectedProject.video}
+          poster={selectedProject.poster}
+          aspect={selectedProject.aspect}
+          category={selectedProject.category}
+          year={selectedProject.year}
+          description={selectedProject.description}
         />
       )}
     </MotionConfig>

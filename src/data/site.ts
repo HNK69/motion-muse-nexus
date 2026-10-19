@@ -9,9 +9,10 @@ export type Project = {
   title: string;
   category: string;
   year: string;
-  /** Placeholder path — drop the real file in /public and keep the name. */
   video: string;
+  poster?: string;
   description: string;
+  aspect?: "portrait" | "landscape" | "square";
 };
 
 export type Service = {
@@ -28,6 +29,7 @@ export type ExperienceItem = {
   description: string;
   /** Optional official logo URL (SVG preferred). Falls back to a wordmark. */
   logo?: string;
+  tags?: string[];
 };
 
 export type Testimonial = {
@@ -89,69 +91,113 @@ export const NAV_LINKS = [
 export const PROJECTS: Project[] = [
   {
     id: "travel-film-i",
-    title: "Travel Film I",
-    category: "Documentary",
+    title: "Travel Film I — Dawn Reflections",
+    category: "Travel Film",
     year: "2026",
-    video: "/travel-film-i.mov",
-    description: "A first travel film exploring light, landscape and quiet moments.",
+    video: "/videos/travel-film-i.mp4",
+    poster: "/thumbnails/travel-film-i.jpg",
+    aspect: "landscape",
+    description: "Cinematic sunrise boat journey capturing morning golden light, gentle water reflections, and contemplative atmosphere.",
   },
   {
     id: "travel-film-ii",
-    title: "Travel Film II",
+    title: "Travel Film II — Sacred River",
     category: "Documentary",
     year: "2026",
-    video: "/travel-film-ii.mov",
-    description: "A second travel chapter focused on rhythm, pace and place.",
+    video: "/videos/travel-film-ii.mp4",
+    poster: "/thumbnails/travel-film-ii.jpg",
+    aspect: "landscape",
+    description: "Atmospheric evening narrative capturing ancient riverbank rituals, flickering pyres, and intense nocturnal rhythm.",
   },
   {
-    id: "cinematic-travel-reel-portrait",
-    title: "Cinematic Travel Reel (Portrait)",
-    category: "Portrait",
+    id: "brx-college-fest",
+    title: "Live Concert Coverage",
+    category: "Event & Fest",
     year: "2026",
-    video: "/WayanadSAFAR.mp4",
-    description: "A vertical travel reel built for immersive portrait viewing.",
+    video: "/videos/brx-college-fest.mp4",
+    poster: "/thumbnails/brx-college-fest.jpg",
+    aspect: "landscape",
+    description: "High-octane college festival performance coverage edited on beat to live drums and roaring crowd energy.",
   },
   {
-    id: "college-event-reel",
-    title: "College Event Reel",
-    category: "Event",
+    id: "paritrana-teaser",
+    title: "Paritrana — MBA Fest Teaser",
+    category: "3D Motion",
     year: "2026",
-    video: "Brx.mp4",
-    description: "High-energy festival coverage cut to the rhythm of the crowd.",
+    video: "/videos/paritrana-teaser.mp4",
+    poster: "/thumbnails/paritrana-teaser.jpg",
+    aspect: "landscape",
+    description: "Emblem title reveal and cinematic motion sequence crafted for RNSIT Department of MBA flagship event.",
   },
   {
-    id: "commercial-edit",
-    title: "Commercial Edit",
-    category: "Brand",
+    id: "brand-reel",
+    title: "POV: The Dress",
+    category: "Fashion Reel",
+    year: "2026",
+    video: "/videos/brand-reel.mp4",
+    poster: "/thumbnails/brand-reel.jpg",
+    aspect: "portrait",
+    description: "Vibrant vertical fashion reel featuring dynamic title integration, color-graded aesthetic, and modern lifestyle pacing.",
+  },
+  {
+    id: "wayanad-safar",
+    title: "Wayanad Safar",
+    category: "Travel Reel",
+    year: "2026",
+    video: "/videos/wayanad-safar.mp4",
+    poster: "/thumbnails/wayanad-safar.jpg",
+    aspect: "portrait",
+    description: "High-energy motorcycle expedition across misty forest hills, graded with punchy tones in full 9:16 portrait format.",
+  },
+  {
+    id: "fdp-academic",
+    title: "AI Academic Excellence",
+    category: "Academic Promo",
+    year: "2026",
+    video: "/videos/fdp-academic.mp4",
+    poster: "/thumbnails/fdp-academic.jpg",
+    aspect: "portrait",
+    description: "Official portrait promotional video for RNSIT Faculty Development Programme on AI-driven academic research.",
+  },
+  {
+    id: "brocode-commercial",
+    title: "Bro Code — Product Edit",
+    category: "Commercial",
     year: "2025",
-    video: "/Brocode2.mp4",
-    description: "Product-led commercial edit with precision pacing and grade.",
-  },
-  {
-    id: "ai-creative-visuals",
-    title: "AI Creative Visuals",
-    category: "Experimental",
-    year: "2026",
-    video: "/Paritrana Teaser.mp4",
-    description: "Generated visual sequences composited into a live-action narrative.",
+    video: "/videos/brocode-commercial.mp4",
+    poster: "/thumbnails/brocode-commercial.jpg",
+    aspect: "square",
+    description: "Snappy commercial product edit pairing split review formats, sharp graphic callouts, and clean sound sync.",
   },
 ];
 
 export const STATS: Stat[] = [
   { id: "projects", value: 50, suffix: "+", label: "Projects delivered" },
-  { id: "brands", value: 2, label: "Brands" },
+  { id: "brands", value: 4, suffix: "+", label: "Brands & Platforms" },
   { id: "agency", value: 1, label: "Creative agency" },
   { id: "college", value: 6, suffix: "+", label: "Official college productions" },
 ];
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
+    id: "growthschool",
+    company: "GrowthSchool",
+    role: "Video Editor",
+    period: "2024 — 2025",
+    description:
+      "Created high-converting performance video creatives, masterclass promos, and engaging short-form content for top industry programs with fast turnaround times.",
+    logo: "/logos/growthschool-white.svg",
+    tags: ["Performance Ads", "Masterclass Promos", "Short-Form Edits"],
+  },
+  {
     id: "emptycup",
     company: "EmptyCup",
-    role: "Video Editor",
-    period: "2025–2026",
+    role: "Video Editor & Creative Specialist",
+    period: "2025 — 2026",
     description:
-      "Short-form and brand films for an interior design platform, built around calm pacing and material texture.",
+      "Produced architectural walkthroughs, short-form reels, and brand films for an interior design tech platform, built around calm pacing, sound design, and material texture.",
+    logo: "/logos/emptycup-official.png",
+    tags: ["3D Interior Walkthroughs", "Spatial Storytelling", "Reels & Brand Films"],
   },
   {
     id: "sharp-cuttzz",
@@ -159,22 +205,27 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: "Creative Editor",
     period: "2024 — 2025",
     description:
-      "Agency work across commercial edits, motion graphics and grading for client campaigns.",
+      "Agency editing across commercial cuts, dynamic motion graphics, and cinematic color grading for diverse brand campaigns.",
+    tags: ["Commercial Edits", "Dynamic Motion Graphics", "Color Grading"],
   },
   {
-    id: "college-events",
-    company: "College Events & Fests",
-    role: "Official Production",
+    id: "rns-mba",
+    company: "RNSIT (MBA Department)",
+    role: "Lead Video Production & Editor",
     period: "2023 — Present",
-    description: "Aftermovies, promos and live coverage for official college events and festivals.",
+    description:
+      "Directed aftermovies, official teasers, and high-energy live event coverage for flagship collegiate festivals and departmental programs.",
+    logo: "/logos/rnsit-crest.png",
+    tags: ["Event Aftermovies", "Official Teasers", "Festival Coverage"],
   },
   {
     id: "freelance",
-    company: "Freelance Projects",
-    role: "Independent Editor",
+    company: "Independent Freelance",
+    role: "Cinematic Editor & AI Creative",
     period: "2023 — Present",
     description:
-      "Travel films, reels and commissioned edits for independent creators and small brands.",
+      "Travel films, commissioned product reels, and AI-assisted visual narratives for independent creators and emerging brands.",
+    tags: ["Travel Films", "AI Visual Effects", "Narrative Storytelling"],
   },
 ];
 
@@ -250,24 +301,17 @@ export const TOOLS: Tool[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    id: "t1",
+    id: "emptycup",
     quote:
-      "Placeholder testimonial — replace with a real client quote. The edit carried the whole campaign; pacing, grade and sound were exactly right.",
-    name: "Client Name",
-    role: "Brand / Company",
+      "Professional, on time, and a remarkably fast learner. Krupaal understood our visual aesthetic quickly, delivering polished interior walkthrough edits and brand videos with consistent precision.",
+    name: "EmptyCup Team",
+    role: "EmptyCup — 3D Interior Platform",
   },
   {
-    id: "t2",
+    id: "rns-mba",
     quote:
-      "Placeholder testimonial — replace with a real client quote. Delivered ahead of schedule without losing an ounce of craft.",
-    name: "Client Name",
-    role: "Creative Agency",
-  },
-  {
-    id: "t3",
-    quote:
-      "Placeholder testimonial — replace with a real client quote. Understood the story before we could explain it.",
-    name: "Client Name",
-    role: "Event Production",
+      "Creative, fast, and remarkably detail-oriented. Krupaal elevated our department's event promotions and teasers with cinematic pacing and high-impact motion visuals that engaged our entire audience.",
+    name: "Media & Event Cell",
+    role: "Department of Management Studies (MBA), RNSIT",
   },
 ];

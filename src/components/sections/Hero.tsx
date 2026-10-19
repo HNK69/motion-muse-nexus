@@ -19,7 +19,11 @@ export function Hero() {
         {/* Replace with hero-video.mp4 */}
         <video
           src="/hero-video.mp4"
+          poster="/thumbnails/hero-poster.jpg"
           autoPlay={!reduced}
+          muted
+          loop
+          playsInline
           className="size-full object-cover opacity-45"
         />
         <div className="absolute inset-0 bg-background/55" />
